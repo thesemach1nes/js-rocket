@@ -50,6 +50,12 @@ body{
   100% {border-bottom: 300px solid black;}
 }
 
+@keyframes flying {
+  0%   {bottom: 250px;}
+  50%  {bottom: 275px;}
+  100% {bottom: 250px;}
+}
+
 .ground{
 	background-color: black;
 	position: absolute;
@@ -79,7 +85,7 @@ body{
 	position: absolute;
 	left: 50%;
 	bottom: 20px;
-	width: 0;
+	width: 0px;
 	height: 0;
 	border-left: 100px solid transparent;
 	border-right: 100px solid transparent;
@@ -107,10 +113,13 @@ body.body-state2 .rocket{
 }
 
 body.body-state3 .rocket{
-	border-bottom: 300px solid green;
+	border-bottom: 300px solid black;
 }
 body.body-state4 .rocket{
 	transition: none;
+	animation-name: flying;
+ 	animation-duration: 1s;
+  	animation-iteration-count: infinite;
 
 }
 
@@ -121,7 +130,8 @@ body.body-state5 .rocket{
 
 body.body-state3 .rocket,
 body.body-state4 .rocket{
-	bottom: 1000px;
+	bottom: 250px;
+
 }
 
 .state1,
