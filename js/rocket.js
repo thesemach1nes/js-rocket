@@ -13,6 +13,21 @@ var changeState = function (state){
 		timer = setInterval(function(){
 			countdownNumber =countdownNumber -1;
 				document.getElementById('countdown').innerHTML = countdownNumber =countdownNumber;
+				if (countdownNumber > 5 && countdownNumber <= 8) {
+					//preparing thrusters
+					document.getElementById('thrusters').className = 'thrusters show';
+				} else{
+					document.getElementById('thrusters').className = 'thrusters';
+				}
+
+				if (countdownNumber > 0 && countdownNumber < 5) {
+					//ready for launch
+					document.getElementById('preparing').className = 'preparing show';
+
+				} else{
+					document.getElementById('preparing').className = 'preparing';
+				}
+
 				if (countdownNumber <= 0) {
 					changeState(3);
 				}

@@ -1,3 +1,7 @@
+body{
+	font-family: 'Arial', sans-serif;
+}
+
 .left{
 	position: fixed;
 	background-color: azure;
@@ -21,6 +25,7 @@
 	text-transform: uppercase;
 	margin-top: 50vh;
 	z-index: 99;
+	font-size: 30px;
 }
 
 .ground{
@@ -32,6 +37,30 @@
 	height: 20px;
 }
 
+.thrusters{
+	position: absolute;
+	top: 70px;
+	left: 170px;
+	text-align: center;
+	display: none;
+}
+
+.preparing{
+	position: absolute;
+	top: 70px;
+	left: 170px;
+	text-align: center;
+	display: none;
+}
+
+.thrusters.show{
+	display: block;
+}
+
+.preparing.show{
+	display: block;
+}
+
 .rocket{
 	position: absolute;
 	left: 50%;
@@ -40,7 +69,7 @@
 	height: 272px;
 	margin-left: -71.5px;
 	background-color: blue;
-	transition: bottom 10s;
+	transition: bottom 5s;
 	z-index: -100;
 }
 
@@ -54,12 +83,15 @@ body.body-state1 .rocket,
 /*rocket bg image*/
 body.body-state2 .rocket{
 	background-color: orange;
+	transition: none;
+
 }
 
 body.body-state3 .rocket{
 	background-color: green;
 }
 body.body-state4 .rocket{
+	transition: none;
 
 }
 
@@ -88,10 +120,18 @@ body.body-state3 .state3{display: block;}
 body.body-state4 .state4{display: block;}
 body.body-state5 .state5{display: block;}
 
-a{
 
+.interface{
+ 	text-align: center;
+ 	padding: 20px;
 }
 
-a.button{
 
+a.button{
+	display: inline-block;
+	background-color: white;
+	color: black;
+	padding: 20px;
+	text-transform: uppercase;
+	text-decoration: none;
 }
