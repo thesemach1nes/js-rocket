@@ -19,11 +19,11 @@
 		<h1>Lift Off!</h1>
 	</div>
 	<div class="interface state4">
-		<h1>Well Done</h1>
+		<h1>Mission succes</h1>
 		<a href="#" class="button" onclick="changeState(1);">Do it again!</a>
 	</div>
 	<div class="interface state5">
-		<h1>Oh No!</h1>
+		<h1>Mission failed</h1>
 		<a href="#" class="button" onclick="changeState(1);">Try again!</a>
 	</div>
 </div>
@@ -31,7 +31,7 @@
 <div class="right">
 	<div class="ground"></div>
 	<div class="rocket"></div>
-	<div class="state5">
+	<div class="state5" id="failure">
 		<h1>Critical failure!</h1>
 	</div>
 	<div class="thrusters" id="thrusters">

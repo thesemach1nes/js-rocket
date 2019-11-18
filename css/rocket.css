@@ -1,19 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+
 body{
-	font-family: 'Arial', sans-serif;
+	font-family: 'Roboto Mono', monospace;
+	text-transform: uppercase;
 }
 
 .left{
 	position: fixed;
-	background-color: azure;
+	background-color: black;
 	width: 50%;
 	height: 100%;
 	top: 0;
 	left: 0;
+	color: white;
 }
 
 .right{
 	position: fixed;
-	background-color: aquamarine;
+	background-color:white;
 	width: 50%;
 	height: 100%;
 	top: 0;
@@ -22,10 +27,27 @@ body{
 
 .right h1{
 	text-align: center;
-	text-transform: uppercase;
 	margin-top: 50vh;
 	z-index: 99;
 	font-size: 30px;
+}
+
+#failure h1{
+  animation-name: failure;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes failure {
+  0%   {color: red;}
+  100% {color: white;}
+}
+
+@keyframes launch {
+  25%  {border-bottom: 300px solid orange;}
+  50%  {border-bottom: 300px solid black;}
+  75%  {border-bottom: 300px solid orange;}
+  100% {border-bottom: 300px solid black;}
 }
 
 .ground{
@@ -38,18 +60,10 @@ body{
 }
 
 .thrusters{
-	position: absolute;
-	top: 70px;
-	left: 170px;
-	text-align: center;
 	display: none;
 }
 
 .preparing{
-	position: absolute;
-	top: 70px;
-	left: 170px;
-	text-align: center;
 	display: none;
 }
 
@@ -65,10 +79,12 @@ body{
 	position: absolute;
 	left: 50%;
 	bottom: 20px;
-	width: 143px;
-	height: 272px;
-	margin-left: -71.5px;
-	background-color: blue;
+	width: 0;
+	height: 0;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 300px solid black;
+	margin-left: -100px;
 	transition: bottom 5s;
 	z-index: -100;
 }
@@ -82,13 +98,16 @@ body.body-state1 .rocket,
 
 /*rocket bg image*/
 body.body-state2 .rocket{
-	background-color: orange;
+	border-bottom: 300px solid orange;
 	transition: none;
+	animation-name: launch;
+ 	animation-duration: 2s;
+  	animation-iteration-count: infinite;
 
 }
 
 body.body-state3 .rocket{
-	background-color: green;
+	border-bottom: 300px solid green;
 }
 body.body-state4 .rocket{
 	transition: none;
@@ -96,7 +115,7 @@ body.body-state4 .rocket{
 }
 
 body.body-state5 .rocket{
-	background-color: transparent;
+	border-bottom: 0px solid;
 	transition: none;
 }
 
