@@ -91,7 +91,7 @@ body{
 	border-right: 100px solid transparent;
 	border-bottom: 300px solid black;
 	margin-left: -100px;
-	transition: bottom 5s;
+	transition: bottom 10s;
 	z-index: -100;
 }
 
