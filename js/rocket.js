@@ -69,15 +69,18 @@ var changeState = function (state){
 	};
 };
 
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var myArr = JSON.parse(this.responseText);
-    document.getElementById("demo").innerHTML = myArr[0];
-  }
-};
-xmlhttp.open("GET", "sommen.JSON", true);
-xmlhttp.send();
+$.getJSON("sommen.json", function(json) {
+    console.log(json); // this will show the info it in firebug console
+});
+// var xmlhttp = new XMLHttpRequest();
+// xmlhttp.onreadystatechange = function() {
+//   if (this.readyState == 4 && this.status == 200) {
+//     var myArr = JSON.parse(this.responseText);
+//     document.getElementById("highscore").innerHTML = myArr[0];
+//   }
+// };
+// xmlhttp.open("GET", "sommen.JSON", true);
+// xmlhttp.send();
 
 // //check mouse move voor parallax
 // var input = {
